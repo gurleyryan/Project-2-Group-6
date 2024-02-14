@@ -1,0 +1,22 @@
+{
+  "name": "project-2-group-6",
+  "version": "1.0.0",
+  "description": "FestivalHub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gurleyryan/Project-2-Group-6.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gurleyryan/Project-2-Group-6/issues"
+  },
+  "homepage": "https://github.com/gurleyryan/Project-2-Group-6#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
