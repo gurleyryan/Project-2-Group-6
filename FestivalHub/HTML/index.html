@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FestivalHub</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/FestivalHub/HTML/style.css" />
+    <title>Chat App</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="animated-text">FestivalHub</div>
+     <!-- <img src = '/FestivalHub.png' alt="FestivalHub"> -->
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+      <style>
+           a {
+            font-family: "Your Font", sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            font-style: italic;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff4500;
+            text-decoration: underline;
+        }
+      </style>
+      <nav class="navbar">
+       <!--here goes the data/api for other music festivals-->
+       <a href="https://www.tomorrowland.com/home/">Tomorrowland</a>
+       <a href="https://lasvegas.electricdaisycarnival.com"> EDC</a>
+       <a href="https://www.coachella.com"> Coachella</a>
+      </nav>
+    </nav>
+
+    <!-- Body -->
+    <main>
+      <section>
+        <input type="text" id="'messageInput">
+        <button onclick="sendMessage()">Send</button>
+        <ul id="'mssageList"></ul>
+       <script>
+        const socket = io()
+          any, sendMessage, () => {
+          const messageInput = document.getElementById('messageInput');
+          const message = messageInput.value.trim();
+              if (message !== '') {
+              socket.emit('chat message', message);
+              messageInput.value = '';
+            }
+          }
+        //function to receive
+        function handleMessage(message){
+          const messageList = document.getElementById('messageList');
+          const listItem = document.createElement('li');
+          lsitItem.textContent =  message;
+          messageList.appendChild(listItem);
+        }
+        socket.on('chat message', handleMessage);
+       </script>
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <h5>
+     Coded by: J.Campos, B.Aguilar, I.Virrey, R.Gurley, K.Phan
+      </h5>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+// GET route for retrieving festivals
+app.get('/festivals', (req, res) => {
+  // Logic to retrieve festivals from the database
+  res.json({ festivals: festivalsData });
+});
+
+// POST route for adding new festival
+app.post('/festivals', (req, res) => {
+  // Logic to add new festival to the database
+  res.json({ message: 'Festival added successfully' });
+});
