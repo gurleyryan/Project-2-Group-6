@@ -1,7 +1,7 @@
 // models/Festival.js
 
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('./config/database');
+const sequelize = require('../config/connection');
 
 const Festival = sequelize.define('Festival', {
   name: {

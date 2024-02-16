@@ -1,3 +1,6 @@
+// Attributes for SQL - mapped corresp. to name, location, date, StartDate, endDate
+// file exports the festival model for use in other parts of the app
+
 exports.getAllFestivals = async (req, res) => {
     try {
       const festivals = await Festival.findAll();
