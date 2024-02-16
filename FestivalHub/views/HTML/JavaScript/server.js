@@ -2,10 +2,26 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
+const kaleidoscope= document.getElementById('kaleidoscope');
 
 // Create an Express application
 const app = express();
 const server = http.createServer(app);
+
+//Create festivalhub logo
+const logo=document.createElement ('img');
+logo.src='festivalhub-logo.png'
+logo.alt="FestivalHub";
+logo.classList.add('logo');
+kaleidoscope.appendChild(logo);
+
+// kaleidoscope effect
+for(let i=0; i<6; i++){
+  const segment=document.createElement('div');
+  segment.classList.add('segment');
+  segment.style.transform='rotate(${60 * i}deg)';
+  kaleidoscope.appendChild(segment);
+}
 
 //Initialize Socket
 const io = socketIo(server);

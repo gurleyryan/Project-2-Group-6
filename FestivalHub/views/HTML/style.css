@@ -13,6 +13,27 @@
     background: #13293d;
     color: #fff;
   }
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  #kaleidoscope {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: black;
+  }
+
+  #kaleidoscope .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+  }
   
   nav {
     display: flex;
