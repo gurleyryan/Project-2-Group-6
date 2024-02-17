@@ -9,3 +9,8 @@ app.post('/festivals', (req, res) => {
   // Logic to add new festival to the database
   res.json({ message: 'Festival added successfully' });
 });
+
+const PORT = process.env.PORT || 3000;
+app.listen (PORT, () => {
+  console.log('server is running on ${PORT}');
+})
