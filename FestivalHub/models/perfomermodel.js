@@ -1,28 +1,26 @@
-// models/User.js
+// models/Performer.js
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-const User = sequelize.define('User', {
-  user_id: {
+const Performer = sequelize.define('Performer', {
+  performer_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
-  username: {
+  performer_name: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false
+  genre: {
+    type: DataTypes.STRING
   },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false
+  description: {
+    type: DataTypes.STRING
   },
-  preference: {
+  image_file: {
     type: DataTypes.STRING
   }
 });
 
-module.exports = User;
+module.exports = Performer;
