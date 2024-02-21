@@ -6,11 +6,19 @@ const kaleidoscope= document.getElementById('kaleidoscope');
 
 // Create an Express application
 const app = express();
-const server = http.createServer(app);
+const server = process.env.PORT || 3000;
+
+//set up  handlebars as default template engine
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+//Handle set as default template engine
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('./controllers/dish-routes'));
 
 //Create festivalhub logo
 const logo=document.createElement ('img');
-logo.src='festivalhub-logo.png'
+logo.src='festivalhub-logo.png';
 logo.alt="FestivalHub";
 logo.classList.add('logo');
 kaleidoscope.appendChild(logo);
@@ -21,13 +29,10 @@ for(let i=0; i<6; i++){
   segment.classList.add('segment');
   segment.style.transform='rotate(${60 * i}deg)';
   kaleidoscope.appendChild(segment);
-}
+};
 
 //Initialize Socket
 const io = socketIo(server);
-
-//Handle stativ
-app.use(express.static('public'));
 
 //handle Sovket.io connections
 io.on('connection', (socket) => {
@@ -37,26 +42,16 @@ socket.on('chat message', (msg) => {
     console.log('Message', msg);
     io.emit('chat message', msg);
 });
-})
+});
 
 //Handle disconnection
 socket.on('disconnect', () => {
     console.log('User disconnected');
 });
 
-// Define a route
-app.get('/', (req, res) => {
-  res.send('Hello, Express!');
-});
-
 // Start the server
-const port = 3000; 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT,() => {
+    console.log('Server listening on: http://localhost:'+ PORT);
 });
-const PORT = process.env.PORT || 3000;
-server.listen(PORT,() => {
-    console.log('Server is running on port ${PORT}');
-})
 
 
