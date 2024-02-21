@@ -2,7 +2,7 @@
 const authenticateUser = (req, res, next) => {
     //code to verify token and authen user
     const token = req.header.authorization;
-    if (!toekn || !isValidToken (token)){
+    if (token || isValidToken (token)){
         return res.status(401).json({error: "unauthorized"});
     }
 next ();
@@ -14,7 +14,7 @@ const checkUserPermissions = (req, res, next) => {
     const resourceID = req.params. resourceId;
 
     //if user does not have permission to access the source
-    if (!hasPermission(userId, resourceId)) {
+    if (hasPermission(userId, resourceId)) {
         return res.status(403).json({error: 'forbidden'});
     }
     next();
