@@ -1,21 +1,15 @@
-const express = require('express');
-const router = express.Router();
-const festivalController = require('./controllers/festivalController');
+const router = require('express').Router();
+
+// const festivalController = require('./controllers/festivalController');
 
 // Define routes
-router.get('/festivals', festivalController.getAll);
-router.post('/festivals', festivalController.create);
+// router.get('/festivals', festivalController.getAll);
+// router.post('/festivals', festivalController.create);
+
+const apiRoutes = require('./api');
+const festivalController = require('./festivalController');
+
+router.use('/', festivalController);
+router.use('/api', apiRoutes);
 
 module.exports = router;
-
-const express = require('express');
-
-const PORT = process.env.PORT || 3000;
-
-const app = express();
-
-app.use(express.json());
-
-app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT}`)
-);
