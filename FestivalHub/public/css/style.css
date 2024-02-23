@@ -1,24 +1,124 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    margin: 0;
+  }
+  
+  header {
+    padding: 60px;
+    text-align: left;
+    background: #13293d;
+    color: #fff;
+  }
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+  }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
-}
+  #kaleidoscope {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: black;
+  }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
-}
-
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-}
+  #kaleidoscope .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+  }
+  
+  nav {
+    display: flex;
+    background-color: rgb(250, 250, 246);
+  }
+  
+  nav p {
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  main {
+    display: flex;
+  }
+  
+  aside {
+    flex: 30%;
+    background-color: #b9c6ae;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  section {
+    flex: 70%;
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  footer {
+    padding: 20px;
+    text-align: center;
+    background: #13293d;
+    color: #fff;
+  }
+  
+  /* Image Placeholders */
+  .sample-img {
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+    height: 200px;
+    border: 1px solid black;
+  }
+  
+  /* When using `max-width` as the breakpoint, you must go from widest to narrowest to avoid conflict */
+  
+  /* Tablets - header changes color */
+  @media screen and (max-width: 992px) {
+    header {
+      background: #772014;
+    }
+  }
+  
+  /* Large smartphones - navbar changes color */
+  @media screen and (max-width: 768px) {
+    nav {
+      background-color: #bb8588;
+    }
+  }
+  
+  /* Small smartphones - image placeholders change color */
+  @media screen and (max-width: 576px) {
+    .sample-img {
+      background-color: #8ac4ff;
+    }
+  }
+  
+  .animated-text {
+    font-family: 'Cosmic-sans', sans-serif;
+    font-size: 100px;
+    font-weight: italic;
+    color: #faf6f5;
+    text-transform: uppercase;
+    animation: 2s infinite; 
+  }
+  
+  @keyframes linearGradient {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
