@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{FestivalHub}}</title>
+    <title>FestivalHub</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="/FestivalHub/HTML/style.css" />
     <title>Chat App</title>
     <script src="/socket.io/socket.io.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <div id="kaleidoscope"></div>
-    <script src="script.js"></script>
+ 
+   
   </head>
   <body>
     <!-- Header -->
@@ -51,7 +51,7 @@
         <ul id="messageList"></ul>
        <script>
         const socket = io();
-           function sendMessage, ()  {
+           function sendMessage ()  {
           const messageInput = document.getElementById('messageInput');
           const message = messageInput.value.trim();
               if (message !== '') {
@@ -68,7 +68,7 @@
         }
         socket.on('chat message', handleMessage);
        
-        </p>
+        </script>
       </section>
     </main>
 
