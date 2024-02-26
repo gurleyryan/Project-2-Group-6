@@ -49,6 +49,12 @@ socket.on('disconnect', () => {
     console.log('User disconnected');
 });
 
+//error handling middleware
+app.use((err, req, res, next) => {
+console.error(err.stack);
+res.status(500).send('something went wrong!');
+});
+
 // Start the server
 app.listen(PORT,() => {
     console.log('Server listening on: http://localhost:'+ PORT);
