@@ -1,10 +1,10 @@
 const sequelize = require('../config/connection.js');
 const { Festival, Performer, User, Booking } = require('../models');
 
-const festivalData = require('/festivalData.json');
-const performerData = require('/performerData.json');
-const userData = require('/userData.json');
-const bookingData = require('/bookingData.json');
+const festivalData = require('./festivalData.json');
+const performerData = require('./performerData.json');
+const userData = require('./userData.json');
+const bookingData = require('./bookingData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
