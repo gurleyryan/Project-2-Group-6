@@ -107,7 +107,7 @@
     font-weight: italic;
     color: #faf6f5;
     text-transform: uppercase;
-    animation: 2s infinite; 
+    animation: linearGradient 2s infinite; 
   }
   
   @keyframes linearGradient {
