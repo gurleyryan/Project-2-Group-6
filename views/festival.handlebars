@@ -1,0 +1,96 @@
+{{#if logged_in}}
+<h3>Welcome {{user_name}}</h3>
+<br></br>
+<div class="container">
+   <article class="post">
+    <div class="whole-post">
+        <div class="info-section">
+             <div class="post-name">
+                {{!-- <a href="/blog/{{id}}" class="links">{{blog_name}}</a> --}}
+      <span><h1>Festival Name:<a href="/api/festival/{{id}}"> {{name}}</a></h1></span>
+            </div>
+            <div class="created-by">
+                <p id="comment-subtitle">
+                    Event Located at <b>{{location}} </b>
+                </p>
+            </div>
+        </div>
+        <div class="content-section">
+            <b>Festival details: {{description}}</b>
+            <br>
+            <b>Starting Date: {{format_time starting_date}}</b>
+            <br>
+            <b>Ending Date: {{format_dateWithPLus ending_date}}</b>
+            <br>
+            <b>Ticket Price: ${{ ticket_price}}</b>
+                        
+        </div>
+    </div>
+</article>
+             {{!-- {{#if (is_my_page user.id user_id)}}
+            
+                <div class ="buttonsBlog">
+                <button type="button" class="btn btn-primary btn-lg"id="editBtn">Edit Blog</button>
+                <br></br>
+                <button type="button" class="btn btn-secondary btn-lg"id="deleteBtn">Delete</button>
+                <br></br>
+                </div>
+             {{/if}} --}}
+            <div class="text-center">
+                <h2><b>What's special to discover?</b></h2>
+                {{#each performers as |performer| }}
+                    <div>
+                        <ul>
+                            <li>
+                                
+                                
+            <b>Genre: {{performer.genre}}</b>
+            <br>
+            <b>Peroformer Name: {{performer_name}}</b>
+            <br>
+            <b>Detail: {{description}}</b>
+            <br>
+                <b>---------------------------------------------------</b>
+            <br>
+                           </li>
+                        </ul>
+                        
+                    </div>
+                      {{!-- {{#each images as |image|}} --}}
+                    {{!-- <div class="card-body">
+                    <img src="/images/{{performer.images.[performer_id].image_file}}" alt="{{description}}">
+                    </div> --}}
+
+                  
+                    {{!-- {{/each}} --}}
+                  
+                {{/each}}
+
+                {{#each performers as |performer| }}
+                       {{#each images as |image|}}
+                    <div class="card-body">
+                    <img src="/images/{{image_file}}" alt="{{description}}">
+                    <p> {{description}}</p>
+                    </div>
+                    {{/each}}
+                    {{/each}}
+             
+            </div>
+        
+       
+             
+        </div>
+    </div>
+</div>
+<div class="row">
+<div class="text-center mx-auto col-lg-10 col-md-8 col-sm-7">
+  <form id="comment-form">
+    <label for="comment-form"><strong>Interest in this? Book Now</strong></label>
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </div>
+    </div>
+  </form>
+
+<script src="/js/booking_Order.js"></script>
+
+{{/if}}

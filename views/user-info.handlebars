@@ -1,0 +1,36 @@
+{{#if logged_in}}
+<h3>Welcome {{user_name}}</h3>
+<br></br>
+<div class="container">
+   <article class="post">
+    <div class="whole-post">
+        <div class="info-section">
+             <div class="post-name">
+                <h3>Your Profile</h3>
+          <span><h1>Username: {{username}}</h1></span>
+            </div>
+        </div>
+        <div class="content-section">
+            <br>
+            <b>User_ID: {{id}}</b>
+            <br><br>
+            <b>Email: {{email}}</b>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary btn-sm" id="edit_emailBtn">Change Email</button>
+            <br>
+             <b>OR</b>
+            <br>
+            <b><button type="button" class="btn btn-primary btn-sm"id="edit_emailBtn">Change Password</button></b>
+            <br>
+            <br>
+        </div>
+    </div>
+</article>
+{{!-- 
+              {{#if (is_my_page user.id user_id)}} --}}
+             
+             {{!-- {{/if}} --}}
+<script src="/js/change_emailForm.js"></script>
+
+{{/if}}

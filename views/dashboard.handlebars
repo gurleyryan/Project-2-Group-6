@@ -1,0 +1,47 @@
+
+<h3>Welcome {{user_name}}</h3>
+{{#if books.length}}
+
+<section class="dashboad">
+    <h2>Your Festival Booking Information</h2>
+    {{#each books as |book|}}
+    <ul>
+      <li>
+        <div class="card">
+    <div class="card-header"> 
+        <div><a href="/api/booking/{{id}}">Festival Name: {{festival.id}}_{{festival.name}}</a></div>
+    </div>
+</div>
+
+  <div class="created-by">
+        <div class="content-section">
+            <b>Festival details: {{users.email}}</b>
+            <br>
+            <b>Festival details: {{festival.description}}</b>
+            <br>
+            <b>Event Located: {{festival.location}} </b>
+            <br>
+            <b>Booking Date: {{format_time booking_date}}</b>
+            <br>
+            <b>Quantity : {{number_ofticket}} Tickets</b>
+            <br>
+            <b>Ticket Price : ${{festival.ticket_price}}</b>
+            <br>
+            <b>Total Amount Purchased : ${{ticketPurchased_price}}</b>
+            <br>
+
+        </div>
+    </div>
+     <br>
+      </li>
+    </ul>
+
+ {{/each}}
+
+</section>
+     {{else}}
+          <h2>You has not booked anything festival yet</h2>
+{{/if}}
+
+
+    

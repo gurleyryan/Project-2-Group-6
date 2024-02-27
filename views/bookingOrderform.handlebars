@@ -1,0 +1,88 @@
+{{#if logged_in}}
+<h3>Welcome {{user_name}}</h3>
+<br></br>
+<div class="container">
+   <article class="post">
+    <div class="whole-post">
+        <div class="info-section">
+             <div class="post-name">
+                {{!-- <a href="/blog/{{id}}" class="links">{{blog_name}}</a> --}}
+      <span><h1>Festival Name:<a href="/api/festival/{{id}}"> {{name}}</a></h1></span>
+            </div>
+            <div class="created-by">
+                <p id="comment-subtitle">
+                    Event Located at <b>{{location}} </b>
+                </p>
+            </div>
+        </div>
+        <div class="content-section">
+            <b>Festival details: {{description}}</b>
+            <br>
+            <b>Starting Date: {{format_time starting_date}}</b>
+            <br>
+            <b>Ending Date: {{format_dateWithPLus ending_date}}</b>
+            <br>
+            <b>Ticket Price: ${{ ticket_price}}</b>
+           
+        </div>
+    </div>
+</article>
+             {{!-- {{#if (is_my_page user.id user_id)}}
+            
+                <div class ="buttonsBlog">
+                <button type="button" class="btn btn-primary btn-lg"id="editBtn">Edit Blog</button>
+                <br></br>
+                <button type="button" class="btn btn-secondary btn-lg"id="deleteBtn">Delete</button>
+                <br></br>
+                </div>
+             {{/if}} --}}
+            
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<h2>Qty of ticket:  </h2>
+<div class="container">
+	<div class="row">
+		
+        
+        
+                        <div class="col-lg-2">
+                                        <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
+                                          <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                        </div>
+	</div>
+</div>
+             
+        </div>
+    </div>
+</div>
+    <br>
+<div class="row">
+<div class="text-center mx-auto col-lg-10 col-md-8 col-sm-7">
+    <form id="booking-confirm-form">
+<button class="btn btn-primary" type="submit">Confirm Booking</button>
+  </div>
+    </form>
+</div>
+</div>
+
+
+            
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/js/bookingRequestForm.js"></script>
+
+{{/if}}

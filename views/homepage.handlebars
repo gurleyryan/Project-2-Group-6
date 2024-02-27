@@ -1,0 +1,52 @@
+
+{{#if logged_in}}
+<h3>Welcome {{user_name}}</h3>
+{{/if}}
+
+
+<ul class="post-list">
+    {{#each festivals as |festival|}}
+    <li>
+       <article class="post">
+    <div class="whole-post">
+        <div class="info-section">
+            <div class="post-name">
+                {{!-- <a href="/blog/{{id}}" class="links">{{blog_name}}</a> --}}
+      <span><h1>Festival Name:<br><a href="/api/festival/{{id}}"> {{name}}</a></h1></span>
+            </div>
+                 
+
+
+             <div class="card-main">
+                    <img src="/images/{{background_img}}" alt="{{description}}">
+            </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <br>
+            <b>Festival details: {{description}}</b>
+            <br>
+            <b>Starting Date: {{format_time starting_date}}</b>
+            <br>
+            <b>Ending Date: {{format_dateWithPLus ending_date}}</b>
+            <br>
+            <b>Ticket Price: ${{ ticket_price}}</b>
+            <br>
+            <b> Event Located at: {{location}} </b>
+            <br>   
+            <br>
+            <div id="google-map" class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q={{festival.location}}" zoom="15" width="400" height="250" frameborder="0" style="border:solid 2px white" allowfullscreen></iframe>
+            </div>
+            </div>
+             {{!-- <img src="/images/.jpg" alt="{{description}}"> --}}
+        </div>
+    </div>
+    <br><br>
+</article>
+    </li>
+    {{/each}}
+</ul>
+
+

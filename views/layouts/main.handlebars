@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVC PROJECT</title>
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <h3><a class="navbar-brand" href="/">Festival</a></h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+         {{#if logged_in}}
+        <li class="nav-item">
+        <a class="nav-link" href="/" id="logout">Logout [{{user_name}}]</a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="/api/users/{{user_id}}" id="profile">[{{user_name}}'s profile]</a>
+        </li>
+          {{else}}
+        <li>
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/signup">Sign Up</a>
+        </li>
+          {{/if}}
+         
+      </ul>
+        
+      <h6 id="date-div"></h6>
+    </div>
+    
+  </nav>
+
+    
+  
+  <main>
+    {{{ body }}}
+  </main>
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+        <!-- footer -->
+      <div class="footer">
+        <h2>Made with ❤️️ by Team 6</h2>
+        <p>
+            &copy; 2024 Solution Services, Inc.
+        </p>
+    </div>
+  <script src="/js/displayTime.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

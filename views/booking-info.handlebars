@@ -1,0 +1,50 @@
+{{#if logged_in}}
+<h3>Welcome {{user_name}}</h3>
+<br></br>
+<div class="container">
+   <article class="post">
+    <div class="whole-post">
+        <div class="info-section">
+             <div class="post-name">
+                <h3>Your festival booking info</h3>
+          <span><h1>Festival Name:<a href="/api/festival/{{id}}"> {{festival.name}}</a></h1></span>
+            </div>
+            <div class="created-by">
+                <p id="comment-subtitle">
+                    Event Located at <b>{{festival.location}} </b>
+                </p>
+            </div>
+        </div>
+        <div class="content-section">
+            <b>Username: {{user.username}}</b>
+            <br>
+            <b>Email: {{user.email}}</b>
+            <br>
+            <b>Festival details: {{festival.description}}</b>
+            <br>
+            <b>Booking Date: {{format_time booking_date}}</b>
+            <br>
+            <b>Number of Ticker: {{number_ofticket}}</b>
+            <br>
+            <b>Ticket Price: ${{ festival.ticket_price}}</b>
+            <br>
+            <b>Total Amount Purchased : ${{ticketPurchased_price}}</b>
+            <br>
+            <div id="google-map" class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q={{festival.location}}" zoom="15" width="600" height="350" frameborder="0" style="border:solid 2px white" allowfullscreen></iframe>
+            </div>
+            </div>
+        </div>
+    </div>
+</article>
+{{!-- 
+              {{#if (is_my_page user.id user_id)}} --}}
+            
+              
+                <button type="button" class="btn btn-secondary btn-lg"id="deleteBtn">Cancel This Festival</button>
+                <br></br>
+             
+             {{!-- {{/if}} --}}
+<script src="/js/delete_booking.js"></script>
+
+{{/if}}
