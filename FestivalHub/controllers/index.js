@@ -7,9 +7,11 @@ const router = require('express').Router();
 // router.post('/festivals', festivalController.create);
 
 const apiRoutes = require('./api');
+const homeRoutes = require('./homeRoutes');
 // const festivalController = require('./festivalController');
 
 // router.use('/', festivalController);
 router.use('/api', apiRoutes);
+router.use('/', homeRoutes);
 
 module.exports = router;

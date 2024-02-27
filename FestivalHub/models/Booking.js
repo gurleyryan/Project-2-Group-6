@@ -13,7 +13,8 @@ Booking.init(
     },
     number_of_tickets: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 0
     },
     booking_date: {
       type: DataTypes.DATE,
@@ -22,7 +23,8 @@ Booking.init(
     },
     ticket_price: {
       type: DataTypes.DECIMAL(10, 2),
-      allowNull: false
+      allowNull: false,
+      defaultValue: 0
     }
   },
   {
