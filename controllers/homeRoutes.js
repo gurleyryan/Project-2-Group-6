@@ -37,8 +37,8 @@ router.get("/dashboard",withAuth,(req, res) => {
 		},
     attributes:
     {
-      include:[ 'number_ofticket','booking_date',[ sequelize.literal('`Festival`.`ticket_price` * `Booking`.`number_ofticket`'), 'ticketPurchased_price'],],
-      raw:true
+       include:[ 'number_ofticket','booking_date',[ sequelize.literal('`ticket_price` * `number_ofticket`'), 'ticketPurchased_price'],],
+       raw:true
     },
 		include: [
 		  {
